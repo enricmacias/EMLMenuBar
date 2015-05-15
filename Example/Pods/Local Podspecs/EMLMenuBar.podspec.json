@@ -23,7 +23,7 @@
     ]
   },
   "resources": [
-    "Pod/Resources/*.xib"
+    "Pod/Resources/*.{xib}"
   ],
   "frameworks": [
     "UIKit",

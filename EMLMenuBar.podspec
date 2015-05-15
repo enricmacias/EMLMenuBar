@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'EMLMenuBar' => ['Pod/Assets/*.png']
   }
-  s.resources = ['Pod/Resources/*.xib']
+s.resources = ['Pod/Resources/*.{xib}']
 
   s.frameworks = 'UIKit', 'MapKit'
 end
