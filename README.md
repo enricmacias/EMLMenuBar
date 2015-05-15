@@ -7,14 +7,10 @@
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
-EMLMenuBar is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+EMLMenuBar is available through [CocoaPods](http://cocoapods.org). 
 
 ```ruby
 pod "EMLMenuBar"
@@ -22,7 +18,7 @@ pod "EMLMenuBar"
 
 ## Author
 
-enric.macias.lopez, enric.macias.lopez@glpgs.com
+enric.macias.lopez, enric.macias.lopez@gmail.com
 
 ## License
 
