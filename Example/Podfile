@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'EMLMenuBar', :exclusive => true do
+  pod "EMLMenuBar", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "EMLMenuBar", :path => "../"
+
+  pod 'Specta'
+  pod 'Expecta'
+end
