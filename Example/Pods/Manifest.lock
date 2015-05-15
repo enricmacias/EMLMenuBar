@@ -1,5 +1,5 @@
 PODS:
-  - EMLMenuBar (0.1.0)
+  - EMLMenuBar (1.0)
   - Expecta (1.0.0)
   - Specta (1.0.0)
 
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  EMLMenuBar: 0d89e6af1c2a9f8458c182aaaf99675aca02cc41
+  EMLMenuBar: f7317aa8309b9709119505bd95fdf0fe0fad69de
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
   Specta: 96fe05fe5c7348b5223f85e862904f6e832abb14
 
