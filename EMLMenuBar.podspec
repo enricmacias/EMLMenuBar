@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "EMLMenuBar"
-  s.version          = "1.0"
+  s.version          = "0.1"
   s.summary          = "Shows a menu tool to navigate through UIViewControllers."
   s.description      = <<-DESC
                         Shows a menu tool to navigate through UIViewControllers. Using a UIScrollView or UIPageViewController.
