@@ -39,6 +39,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IrC-fj-INP"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="opM-g8-ucN" id="x9o-yO-nmK"/>
+                                </connections>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amf-0V-ifC" userLabel="List Scroll View">
                                 <rect key="frame" x="0.0" y="40" width="320" height="464"/>
