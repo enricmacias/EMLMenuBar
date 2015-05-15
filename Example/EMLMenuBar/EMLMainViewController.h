@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EMLMenuBar.h>
 
-@interface EMLViewController : UIViewController
+@interface EMLMainViewController : UIViewController <EMLMenuBarDelegate, UIScrollViewDelegate>
+
+@property (nonatomic, weak) IBOutlet EMLMenuBar *menuBar;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 
 @end

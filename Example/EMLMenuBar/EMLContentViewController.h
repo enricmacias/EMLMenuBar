@@ -10,4 +10,7 @@
 
 @interface EMLContentViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) NSString *titleString;
+
 @end

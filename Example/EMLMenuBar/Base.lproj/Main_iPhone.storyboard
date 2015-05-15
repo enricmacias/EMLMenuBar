@@ -1,25 +1,102 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PDl-bp-jbD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Navigation Controller-->
+        <scene sceneID="j0O-NL-FW4">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="EMLViewController" sceneMemberID="viewController">
+                <navigationController id="PDl-bp-jbD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NLl-BQ-LG2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="opM-g8-ucN" kind="relationship" relationship="rootViewController" id="Y6d-gC-mzB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cu1-bm-hIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="443"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="bry-K9-Du7">
+            <objects>
+                <viewController id="opM-g8-ucN" customClass="EMLMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="Tm4-5X-6ND"/>
+                        <viewControllerLayoutGuide type="bottom" id="40G-Ae-VYH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="uQi-kB-wwd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlZ-gF-Lcq" userLabel="Menu Cateogry View" customClass="EMLMenuBar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IrC-fj-INP"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amf-0V-ifC" userLabel="List Scroll View">
+                                <rect key="frame" x="0.0" y="40" width="320" height="464"/>
+                                <connections>
+                                    <outlet property="delegate" destination="opM-g8-ucN" id="tv2-GE-IOc"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Amf-0V-ifC" firstAttribute="leading" secondItem="uQi-kB-wwd" secondAttribute="leading" id="3l6-NR-uX7"/>
+                            <constraint firstItem="nlZ-gF-Lcq" firstAttribute="top" secondItem="Tm4-5X-6ND" secondAttribute="bottom" id="Xqh-VH-fIJ"/>
+                            <constraint firstItem="nlZ-gF-Lcq" firstAttribute="leading" secondItem="uQi-kB-wwd" secondAttribute="leading" id="Ykl-UP-Fgx"/>
+                            <constraint firstAttribute="trailing" secondItem="Amf-0V-ifC" secondAttribute="trailing" id="fFW-Ba-DDO"/>
+                            <constraint firstItem="40G-Ae-VYH" firstAttribute="top" secondItem="Amf-0V-ifC" secondAttribute="bottom" id="mQg-wm-iw2"/>
+                            <constraint firstItem="Amf-0V-ifC" firstAttribute="top" secondItem="nlZ-gF-Lcq" secondAttribute="bottom" id="tZn-Hy-cMB"/>
+                            <constraint firstAttribute="trailing" secondItem="nlZ-gF-Lcq" secondAttribute="trailing" id="uwu-Fe-IzJ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="UmJ-S3-W39"/>
+                    <connections>
+                        <outlet property="menuBar" destination="nlZ-gF-Lcq" id="l3L-28-b4v"/>
+                        <outlet property="scrollView" destination="Amf-0V-ifC" id="NeM-Ls-EF9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KQB-XG-eAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="477" y="443"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="6uf-Jf-AuS">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="KcQ-q8-ecl" customClass="EMLContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yif-Q2-8UC"/>
+                        <viewControllerLayoutGuide type="bottom" id="hXp-Zw-c4g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xJ7-b6-cdR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCu-Lf-bHL">
+                                <rect key="frame" x="110" y="126" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="VCu-Lf-bHL" id="wFf-vW-Jeu"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNO-0h-2ij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="867" y="443"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
