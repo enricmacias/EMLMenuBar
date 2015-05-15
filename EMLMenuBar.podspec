@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "EMLMenuBar"
-  s.version          = "0.1"
+  s.version          = "0.1.2"
   s.summary          = "Shows a menu tool to navigate through UIViewControllers."
   s.description      = <<-DESC
                         Shows a menu tool to navigate through UIViewControllers. Using a UIScrollView or UIPageViewController.
@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'EMLMenuBar' => ['Pod/Assets/*.png']
   }
+  s.resources = ['Pod/Resources/*.xib']
 
   s.frameworks = 'UIKit', 'MapKit'
 end
