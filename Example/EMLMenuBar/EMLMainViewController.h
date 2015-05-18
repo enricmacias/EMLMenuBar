@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <EMLMenuBar.h>
 
-@interface EMLMainViewController : UIViewController <EMLMenuBarDelegate, UIScrollViewDelegate>
+@interface EMLMainViewController : UIViewController <EMLMenuBarDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet EMLMenuBar *menuBar;
-@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIView *containerView;
+
+@property (nonatomic, weak) UIPageViewController *pageViewController;
 
 @end

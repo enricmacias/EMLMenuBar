@@ -10,6 +10,7 @@
 
 @interface EMLContentViewController : UIViewController
 
+@property (nonatomic, assign) NSUInteger pageIndex;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) NSString *titleString;
 

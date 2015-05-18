@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.titleLabel.text = self.titleString;
+    self.titleLabel.text = [NSString stringWithFormat:@"Page %d", self.pageIndex+1];
 }
 
 - (void)didReceiveMemoryWarning
