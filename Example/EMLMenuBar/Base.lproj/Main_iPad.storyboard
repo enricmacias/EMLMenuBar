@@ -1,25 +1,113 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="pMd-Bm-cy7">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="fdK-Xc-RRa">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="EMLMainViewController" sceneMemberID="viewController">
+                <navigationController id="pMd-Bm-cy7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lkh-aT-h5w">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="skz-Z2-9x9" kind="relationship" relationship="rootViewController" id="ULw-zM-zj1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mw9-EI-6br" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-102" y="-63"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="mXn-SU-FZE">
+            <objects>
+                <viewController id="skz-Z2-9x9" customClass="EMLMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Iam-Eu-Nmr"/>
+                        <viewControllerLayoutGuide type="bottom" id="yOm-YW-1Iz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="aCi-Mr-OUU">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgX-0u-jGV" userLabel="Menu Cateogry View" customClass="EMLMenuBar">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4tl-M4-Ldl"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="skz-Z2-9x9" id="6PQ-sB-g5x"/>
+                                </connections>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STY-xK-zKd">
+                                <rect key="frame" x="0.0" y="60" width="768" height="900"/>
+                                <connections>
+                                    <segue destination="ZKF-nK-Qoz" kind="embed" id="d5g-yz-gKV"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xgX-0u-jGV" firstAttribute="leading" secondItem="aCi-Mr-OUU" secondAttribute="leading" id="AdJ-Nm-DXl"/>
+                            <constraint firstItem="xgX-0u-jGV" firstAttribute="top" secondItem="Iam-Eu-Nmr" secondAttribute="bottom" id="DeS-FH-FVR"/>
+                            <constraint firstItem="STY-xK-zKd" firstAttribute="top" secondItem="xgX-0u-jGV" secondAttribute="bottom" id="Fve-kV-YvI"/>
+                            <constraint firstAttribute="trailing" secondItem="STY-xK-zKd" secondAttribute="trailing" id="OsA-eP-AJx"/>
+                            <constraint firstItem="yOm-YW-1Iz" firstAttribute="top" secondItem="STY-xK-zKd" secondAttribute="bottom" id="UF9-jv-NSL"/>
+                            <constraint firstItem="STY-xK-zKd" firstAttribute="leading" secondItem="aCi-Mr-OUU" secondAttribute="leading" id="bgz-hQ-eK0"/>
+                            <constraint firstAttribute="trailing" secondItem="xgX-0u-jGV" secondAttribute="trailing" id="koJ-RK-lBX"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="E3h-vv-dae"/>
+                    <connections>
+                        <outlet property="containerView" destination="STY-xK-zKd" id="U8a-yR-GZu"/>
+                        <outlet property="menuBar" destination="xgX-0u-jGV" id="rYt-Ha-27b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Y8-kC-4eG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="851" y="-63"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="Ybk-rs-kBM">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="ku5-bX-6T5" customClass="EMLContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xvq-TR-VdR"/>
+                        <viewControllerLayoutGuide type="bottom" id="UXf-3V-aPj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NOr-Nm-G4q">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfP-cq-Kny">
+                                <rect key="frame" x="313" y="200" width="142" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="qfP-cq-Kny" id="nvD-d6-5wg"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hhY-fJ-0t4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="853" y="1033"/>
+        </scene>
+        <!--Fast Page View Controller-->
+        <scene sceneID="RWg-5Y-uMz">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ZKF-nK-Qoz" customClass="EMLFastPageViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MXN-AY-15R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773" y="-63"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
