@@ -60,6 +60,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="UmJ-S3-W39"/>
                     <connections>
+                        <outlet property="containerView" destination="Yk0-ea-bIf" id="dvq-Jp-V1h"/>
                         <outlet property="menuBar" destination="nlZ-gF-Lcq" id="l3L-28-b4v"/>
                     </connections>
                 </viewController>
