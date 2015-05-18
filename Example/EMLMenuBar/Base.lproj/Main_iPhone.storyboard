@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="477" y="443"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Fast Page View Controller-->
         <scene sceneID="vhW-RN-nU7">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="lWG-nD-r1c" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="lWG-nD-r1c" customClass="EMLFastPageViewController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPK-dp-rQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="945" y="443"/>
