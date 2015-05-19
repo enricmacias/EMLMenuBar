@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/EMLMenuBar.svg?style=flat)](http://cocoapods.org/pods/EMLMenuBar)
 [![Platform](https://img.shields.io/cocoapods/p/EMLMenuBar.svg?style=flat)](http://cocoapods.org/pods/EMLMenuBar)
 
+![alt tag](https://raw.github.com/enricmacias/EMLResizableNavigationBar/master/Preview/preview.gif)
+
 ## Usage
 
 
