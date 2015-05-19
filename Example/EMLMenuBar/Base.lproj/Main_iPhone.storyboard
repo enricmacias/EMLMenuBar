@@ -40,6 +40,7 @@
                                     <constraint firstAttribute="height" constant="40" id="IrC-fj-INP"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="dataSource" destination="opM-g8-ucN" id="X9A-pE-SQi"/>
                                     <outlet property="delegate" destination="opM-g8-ucN" id="x9o-yO-nmK"/>
                                 </connections>
                             </view>

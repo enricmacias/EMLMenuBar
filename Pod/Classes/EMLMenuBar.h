@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 
 #import "EMLMenuBarDelegate.h"
+#import "EMLMenuBarDataSource.h"
 #import "EMLMenuBarButton.h"
 
 @interface EMLMenuBar : UIView <EMLMenuBarButtonDelegate>
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) UIView *topBarView;
 
 @property (nonatomic, weak) IBOutlet id<EMLMenuBarDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<EMLMenuBarDataSource> dataSource;
 
 - (void)setup;
 - (void)reloadMenu;

@@ -134,16 +134,6 @@
 #pragma mark EMLMenuBarDelegate
 #pragma mark -
 
-- (NSUInteger)itemCountInMenuBar:(EMLMenuBar *)menuBar
-{
-    return [[self menuDataSource] count];
-}
-
-- (NSString *)itemTitleAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar
-{
-    return [[self menuDataSource] objectAtIndex:index];
-}
-
 - (void)itemSelectedAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar
 {
     NSLog(@"Tag selected");
@@ -169,6 +159,20 @@
                                      // Enable interaction again once the category is changed.
                                      self.pageViewController.view.userInteractionEnabled = YES;
                                  }];
+}
+
+#pragma mark -
+#pragma mark EMLMenuBarDataSource
+#pragma mark -
+
+- (NSUInteger)itemCountInMenuBar:(EMLMenuBar *)menuBar
+{
+    return [[self menuDataSource] count];
+}
+
+- (NSString *)itemTitleAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar
+{
+    return [[self menuDataSource] objectAtIndex:index];
 }
 
 - (void)appearanceForNormalStateMenuBarButton:(EMLMenuBarButton *)barButton

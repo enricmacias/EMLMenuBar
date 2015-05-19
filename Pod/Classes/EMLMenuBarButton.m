@@ -48,7 +48,7 @@
     // Init
     self.index = position;
     self.autoWidth = ![(id)menuBar.delegate respondsToSelector:@selector(itemWidthAtIndex:inMenuBar:)];
-    self.buttonWidth = (self.autoWidth ? 70.0f : [menuBar.delegate itemWidthAtIndex:position inMenuBar:menuBar]);
+    self.buttonWidth = (self.autoWidth ? 70.0f : [menuBar.dataSource itemWidthAtIndex:position inMenuBar:menuBar]);
     self.buttonHeight = menuBar.frame.size.height;
     
     // Set frame
@@ -62,7 +62,7 @@
                               self.buttonWidth, self.buttonHeight - kButtonYOffset)];
     
     // Set title
-    self.titleLabel.text = [menuBar.delegate itemTitleAtIndex:position
+    self.titleLabel.text = [menuBar.dataSource itemTitleAtIndex:position
                                                     inMenuBar:menuBar];
     
     // Set gesture recognizer

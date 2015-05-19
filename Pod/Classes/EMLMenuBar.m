@@ -74,7 +74,7 @@
 
 - (void)initAndAddBarButtons
 {
-    self.itemsInMenuBar = [self.delegate itemCountInMenuBar:self];
+    self.itemsInMenuBar = [self.dataSource itemCountInMenuBar:self];
     
     for (int i = 0; i < self.itemsInMenuBar; i++)
     {
@@ -95,7 +95,7 @@
 
 - (void)reloadMenu
 {
-    self.itemsInMenuBar = [self.delegate itemCountInMenuBar:self];
+    self.itemsInMenuBar = [self.dataSource itemCountInMenuBar:self];
     
     for (EMLMenuBarButton *barButton in self.barButtonsArray){
         [barButton removeFromSuperview];
@@ -196,15 +196,15 @@
 
 - (void)appearanceForNormalStateMenuBarButton:(EMLMenuBarButton *)barButton
 {
-    if ([self.delegate respondsToSelector:@selector(appearanceForNormalStateMenuBarButton:)]) {
-        [self.delegate appearanceForNormalStateMenuBarButton:barButton];
+    if ([self.dataSource respondsToSelector:@selector(appearanceForNormalStateMenuBarButton:)]) {
+        [self.dataSource appearanceForNormalStateMenuBarButton:barButton];
     }
 }
 
 - (void)appearanceForSelectedStateMenuBarButton:(EMLMenuBarButton *)barButton
 {
-    if ([self.delegate respondsToSelector:@selector(appearanceForSelectedStateMenuBarButton:)]) {
-        [self.delegate appearanceForSelectedStateMenuBarButton:barButton];
+    if ([self.dataSource respondsToSelector:@selector(appearanceForSelectedStateMenuBarButton:)]) {
+        [self.dataSource appearanceForSelectedStateMenuBarButton:barButton];
     }
 }
 

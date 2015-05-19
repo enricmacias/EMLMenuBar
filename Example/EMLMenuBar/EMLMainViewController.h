@@ -10,7 +10,7 @@
 #import <EMLMenuBar.h>
 #import "EMLFastPageViewController.h"
 
-@interface EMLMainViewController : UIViewController <EMLMenuBarDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, EMLFastPageViewControllerDelegate>
+@interface EMLMainViewController : UIViewController <EMLMenuBarDelegate, EMLMenuBarDataSource, UIPageViewControllerDataSource, UIPageViewControllerDelegate, EMLFastPageViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet EMLMenuBar *menuBar;
 @property (nonatomic, weak) IBOutlet UIView *containerView;
