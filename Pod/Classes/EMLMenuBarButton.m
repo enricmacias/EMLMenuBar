@@ -8,7 +8,7 @@
 #import "EMLMenuBarButton.h"
 #import "EMLMenuBar.h"
 
-#define kButtonYOffset 2.0f
+#define kButtonYOffset 4.0f
 
 @interface EMLMenuBarButton()
 
@@ -118,7 +118,7 @@
 
 #pragma mark Animation Changes
 
-- (void)appearanceForNormalStateMenuBarButton:(UIView *)barButton
+- (void)appearanceForNormalStateMenuBarButton:(EMLMenuBarButton *)barButton
 {
     CGRect newFrame = self.frame;
     newFrame.size.height = self.buttonHeight - kButtonYOffset;
@@ -128,7 +128,7 @@
     [self.delegate appearanceForNormalStateMenuBarButton:barButton];
 }
 
-- (void)appearanceForSelectedStateMenuBarButton:(UIView *)barButton
+- (void)appearanceForSelectedStateMenuBarButton:(EMLMenuBarButton *)barButton
 {
     CGRect newFrame = self.frame;
     newFrame.size.height = self.buttonHeight;

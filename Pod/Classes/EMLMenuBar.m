@@ -194,14 +194,14 @@
     [self setSelectedItemIndex:barButton.index];
 }
 
-- (void)appearanceForNormalStateMenuBarButton:(UIView *)barButton
+- (void)appearanceForNormalStateMenuBarButton:(EMLMenuBarButton *)barButton
 {
     if ([self.delegate respondsToSelector:@selector(appearanceForNormalStateMenuBarButton:)]) {
         [self.delegate appearanceForNormalStateMenuBarButton:barButton];
     }
 }
 
-- (void)appearanceForSelectedStateMenuBarButton:(UIView *)barButton
+- (void)appearanceForSelectedStateMenuBarButton:(EMLMenuBarButton *)barButton
 {
     if ([self.delegate respondsToSelector:@selector(appearanceForSelectedStateMenuBarButton:)]) {
         [self.delegate appearanceForSelectedStateMenuBarButton:barButton];

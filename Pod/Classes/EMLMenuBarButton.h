@@ -12,8 +12,8 @@
 @protocol EMLMenuBarButtonDelegate <NSObject>
 
 - (void)didPressBarButton:(EMLMenuBarButton *)barButton;
-- (void)appearanceForNormalStateMenuBarButton:(UIView *)barButton;
-- (void)appearanceForSelectedStateMenuBarButton:(UIView *)barButton;
+- (void)appearanceForNormalStateMenuBarButton:(EMLMenuBarButton *)barButton;
+- (void)appearanceForSelectedStateMenuBarButton:(EMLMenuBarButton *)barButton;
 
 @end
 

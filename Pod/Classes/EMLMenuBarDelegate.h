@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EMLMenuBarButton.h"
 
 @class EMLMenuBar;
 
@@ -21,7 +22,7 @@
 
 - (BOOL)itemSelectableAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar;
 - (CGFloat)itemWidthAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar;
-- (void)appearanceForNormalStateMenuBarButton:(UIView *)barButton;
-- (void)appearanceForSelectedStateMenuBarButton:(UIView *)barButton;
+- (void)appearanceForNormalStateMenuBarButton:(EMLMenuBarButton *)barButton;
+- (void)appearanceForSelectedStateMenuBarButton:(EMLMenuBarButton *)barButton;
 
 @end
