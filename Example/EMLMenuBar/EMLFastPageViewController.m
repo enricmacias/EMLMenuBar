@@ -44,7 +44,7 @@
 
 #pragma mark - Private
 
-- (void)changeToDirection:(ENCategoryTabDirection)direction
+- (void)changeToDirection:(EMLCategoryTabDirection)direction
 {
     [self.fastDelegate changeToDirection:direction];
     
@@ -109,19 +109,19 @@
                 // The distance reached is bigger or equal than half the screen width size,
                 // the page is going to be changed.
                 if (self.distanceXFromInitialPoint > 0){
-                    [self changeToDirection:ENCategoryTabDirectionNext];
+                    [self changeToDirection:EMLCategoryTabDirectionNext];
                 }
                 else if (self.distanceXFromInitialPoint < 0){
-                    [self changeToDirection:ENCategoryTabDirectionPrevious];
+                    [self changeToDirection:EMLCategoryTabDirectionPrevious];
                 }
             }
             else if (velocity.x > 300 && self.distanceXFromInitialPoint < -10){
                 // Velocity and distance are big enough to go to the previous page
-                [self changeToDirection:ENCategoryTabDirectionPrevious];
+                [self changeToDirection:EMLCategoryTabDirectionPrevious];
             }
             else if (velocity.x < -300 && self.distanceXFromInitialPoint > 10){
                 // Velocity and distance are big enough to go to the next page
-                [self changeToDirection:ENCategoryTabDirectionNext];
+                [self changeToDirection:EMLCategoryTabDirectionNext];
             }
             else{
                 // There is no page change

@@ -32,6 +32,7 @@
     
     [self.menuBar setup];
     self.menuBar.selectedItemIndex = 0;
+    self.menuBar.menuBarStyle = EMLMenuBarStyleFitText;
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,19 +88,19 @@
 #pragma mark EMLFastPageViewControllerDelegate
 #pragma mark -
 
-- (void)changeToDirection:(ENCategoryTabDirection)direction
+- (void)changeToDirection:(EMLCategoryTabDirection)direction
 {
     NSUInteger index = ((EMLContentViewController*) self.pageViewController.viewControllers[0]).pageIndex;
     
     switch (direction) {
-        case ENCategoryTabDirectionPrevious:{
+        case EMLCategoryTabDirectionPrevious:{
             if (index == 0) {
                 break;
             }
             [self.menuBar setSelectedItemIndex:index-1 animated:YES notifyDelegate:NO];
             break;
         }
-        case ENCategoryTabDirectionNext:{
+        case EMLCategoryTabDirectionNext:{
             if (index == (self.menuDataSource.count - 1)) {
                 break;
             }
@@ -124,7 +125,9 @@
 - (NSArray *)menuDataSource
 {
     if (!_menuDataSource) {
-        _menuDataSource = @[@"Page 1",@"Page 2",@"Page 3",@"Page 4",@"Page 5",@"Page 6",@"Page 7"];
+        //_menuDataSource = @[@"Page 1",@"Page 2",@"Page 3",@"Page 4",@"Page 5",@"Page 6",@"Page 7"];
+        _menuDataSource = @[@"Apple",@"Strawberry",@"Watermelon",@"Melon",@"Peach",@"Dragon Fruit"];
+        //_menuDataSource = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7"];
     }
     
     return _menuDataSource;

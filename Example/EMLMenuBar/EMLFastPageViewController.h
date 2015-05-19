@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 typedef enum : NSUInteger {
-    ENCategoryTabDirectionNext          = 0,
-    ENCategoryTabDirectionPrevious      = 1,
-} ENCategoryTabDirection;
+    EMLCategoryTabDirectionNext          = 0,
+    EMLCategoryTabDirectionPrevious      = 1,
+} EMLCategoryTabDirection;
 
 @protocol EMLFastPageViewControllerDelegate <NSObject>
 
-- (void)changeToDirection:(ENCategoryTabDirection)direction;
+- (void)changeToDirection:(EMLCategoryTabDirection)direction;
 - (void)checkForWorstCaseFired;
 
 @end
