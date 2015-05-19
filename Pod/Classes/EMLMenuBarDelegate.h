@@ -9,7 +9,7 @@
 
 @class EMLMenuBar;
 
-@protocol EMLMenuBarDelegate
+@protocol EMLMenuBarDelegate <NSObject>
 
 @required
 
@@ -21,5 +21,7 @@
 
 - (BOOL)itemSelectableAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar;
 - (CGFloat)itemWidthAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar;
+- (void)appearanceForNormalStateMenuBarButton:(UIView *)barButton;
+- (void)appearanceForSelectedStateMenuBarButton:(UIView *)barButton;
 
 @end

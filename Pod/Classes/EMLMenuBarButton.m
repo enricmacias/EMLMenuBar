@@ -15,6 +15,7 @@
 @property (nonatomic, assign) CGFloat buttonWidth;
 @property (nonatomic, assign) CGFloat buttonHeight;
 @property (nonatomic, assign) BOOL autoWidth;
+@property (nonatomic, weak) UIView *originalPrimitiveInstanceButton;
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 
@@ -93,43 +94,50 @@
 {
     _selected = selected;
     
-    //NewsCategory category = [ANICategoryDataSource categoryTypeAtIndex:self.index];
-    
     if (selected){
-        CGRect newFrame = self.frame;
-        newFrame.size.height = self.buttonHeight;
-        
         if (animated){
             [UIView animateWithDuration:0.25f animations:^{
-                self.frame = newFrame;
-                //self.backgroundColor = [ANICategoryDataSource activeColorByCategory:category];
-                //self.titleLabel.textColor = [UIColor whiteColor];
+                [self appearanceForSelectedStateMenuBarButton:self];
             }];
         }
         else{
-            self.frame = newFrame;
-            //self.backgroundColor = [ANICategoryDataSource activeColorByCategory:category];
-            //self.titleLabel.textColor = [UIColor whiteColor];
+            [self appearanceForSelectedStateMenuBarButton:self];
         }
     }
     else{
-        CGRect newFrame = self.frame;
-        newFrame.size.height = self.buttonHeight - kButtonYOffset;
-        
         if (animated){
             [UIView animateWithDuration:0.25f animations:^{
-                self.frame = newFrame;
-                //self.backgroundColor = [ANICategoryDataSource unactiveColorByCategory:category];
-                //self.titleLabel.textColor = [ANICategoryDataSource titleColorByCategory:category];
+                [self appearanceForNormalStateMenuBarButton:self];
             }];
         }
         else{
-            self.frame = newFrame;
-            //self.backgroundColor = [ANICategoryDataSource unactiveColorByCategory:category];
-            //self.titleLabel.textColor = [ANICategoryDataSource titleColorByCategory:category];
+            [self appearanceForNormalStateMenuBarButton:self];
         }
     }
 }
+
+#pragma mark Animation Changes
+
+- (void)appearanceForNormalStateMenuBarButton:(UIView *)barButton
+{
+    CGRect newFrame = self.frame;
+    newFrame.size.height = self.buttonHeight - kButtonYOffset;
+    
+    self.frame = newFrame;
+    
+    [self.delegate appearanceForNormalStateMenuBarButton:barButton];
+}
+
+- (void)appearanceForSelectedStateMenuBarButton:(UIView *)barButton
+{
+    CGRect newFrame = self.frame;
+    newFrame.size.height = self.buttonHeight;
+    
+    self.frame = newFrame;
+    
+    [self.delegate appearanceForSelectedStateMenuBarButton:barButton];
+}
+
 
 #pragma mark -
 #pragma mark Actions
