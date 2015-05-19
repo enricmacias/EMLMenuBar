@@ -8,8 +8,6 @@
 #import "EMLMenuBarButton.h"
 #import "EMLMenuBar.h"
 
-#define kButtonYOffset 4.0f
-
 @interface EMLMenuBarButton()
 
 @property (nonatomic, assign) CGFloat buttonWidth;
@@ -115,47 +113,24 @@
     if (selected){
         if (animated){
             [UIView animateWithDuration:0.25f animations:^{
-                [self appearanceForSelectedStateMenuBarButton:self];
+                [self.delegate appearanceForSelectedStateMenuBarButton:self];
             }];
         }
         else{
-            [self appearanceForSelectedStateMenuBarButton:self];
+            [self.delegate appearanceForSelectedStateMenuBarButton:self];
         }
     }
     else{
         if (animated){
             [UIView animateWithDuration:0.25f animations:^{
-                [self appearanceForNormalStateMenuBarButton:self];
+                [self.delegate appearanceForNormalStateMenuBarButton:self];
             }];
         }
         else{
-            [self appearanceForNormalStateMenuBarButton:self];
+            [self.delegate appearanceForNormalStateMenuBarButton:self];
         }
     }
 }
-
-#pragma mark Animation Changes
-
-- (void)appearanceForNormalStateMenuBarButton:(EMLMenuBarButton *)barButton
-{
-    CGRect newFrame = self.frame;
-    newFrame.size.height = self.buttonHeight - kButtonYOffset;
-    
-    self.frame = newFrame;
-    
-    [self.delegate appearanceForNormalStateMenuBarButton:barButton];
-}
-
-- (void)appearanceForSelectedStateMenuBarButton:(EMLMenuBarButton *)barButton
-{
-    CGRect newFrame = self.frame;
-    newFrame.size.height = self.buttonHeight;
-    
-    self.frame = newFrame;
-    
-    [self.delegate appearanceForSelectedStateMenuBarButton:barButton];
-}
-
 
 #pragma mark -
 #pragma mark Actions

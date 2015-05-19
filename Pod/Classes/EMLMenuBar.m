@@ -215,12 +215,24 @@
     if ([self.dataSource respondsToSelector:@selector(appearanceForNormalStateMenuBarButton:)]) {
         [self.dataSource appearanceForNormalStateMenuBarButton:barButton];
     }
+    else{
+        CGRect frame = barButton.frame;
+        frame.size.height = self.frame.size.height - 4.0f;
+        
+        barButton.frame = frame;
+    }
 }
 
 - (void)appearanceForSelectedStateMenuBarButton:(EMLMenuBarButton *)barButton
 {
     if ([self.dataSource respondsToSelector:@selector(appearanceForSelectedStateMenuBarButton:)]) {
         [self.dataSource appearanceForSelectedStateMenuBarButton:barButton];
+    }
+    else{
+        CGRect frame = barButton.frame;
+        frame.size.height = self.frame.size.height;
+        
+        barButton.frame = frame;
     }
 }
 
