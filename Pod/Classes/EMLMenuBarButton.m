@@ -42,9 +42,6 @@
 
 - (void)setupWithPosition:(NSInteger)position inMenuBar:(EMLMenuBar *)menuBar;
 {
-    // Set UI
-    [self.layer setCornerRadius:3.0f];
-    
     // Init
     self.index = position;
     self.autoWidth = ![(id)menuBar.delegate respondsToSelector:@selector(itemWidthAtIndex:inMenuBar:)];

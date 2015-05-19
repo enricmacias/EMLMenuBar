@@ -177,6 +177,8 @@
 
 - (void)appearanceForNormalStateMenuBarButton:(EMLMenuBarButton *)barButton
 {
+    [barButton.layer setCornerRadius:3.0f];
+    
     CGRect frame = barButton.frame;
     frame.size.height = self.menuBar.frame.size.height - 5.0f;
     
@@ -187,6 +189,8 @@
 
 - (void)appearanceForSelectedStateMenuBarButton:(EMLMenuBarButton *)barButton
 {
+    [barButton.layer setCornerRadius:3.0f];
+    
     CGRect frame = barButton.frame;
     frame.size.height = self.menuBar.frame.size.height;
     
