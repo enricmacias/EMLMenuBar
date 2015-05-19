@@ -11,6 +11,12 @@
 #import "EMLMenuBarDataSource.h"
 #import "EMLMenuBarButton.h"
 
+typedef enum : NSUInteger {
+    EMLMenuBarStyleNone             = 0,  // The width is the one setted in EMLMenuBarDataSource.
+    EMLMenuBarStyleFitText          = 1,  // The buttons fit the title text.
+    EMLMenuBarStyleFillMenu         = 2,  // The buttons fill the menu view, creating a menu without scroll.
+} EMLMenuBarStyle;
+
 @interface EMLMenuBar : UIView <EMLMenuBarButtonDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -19,6 +25,7 @@
 @property (nonatomic, assign) BOOL bounces; // default is to NO
 @property (nonatomic, strong) NSArray *barButtonsArray;
 @property (nonatomic, strong) UIView *topBarView;
+@property (nonatomic, assign) EMLMenuBarStyle menuBarStyle; // default is to EMLMenuBarStyleNone
 
 @property (nonatomic, weak) IBOutlet id<EMLMenuBarDelegate> delegate;
 @property (nonatomic, weak) IBOutlet id<EMLMenuBarDataSource> dataSource;

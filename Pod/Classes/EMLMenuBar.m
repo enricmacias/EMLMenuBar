@@ -39,6 +39,7 @@
         NSLog(@"initWithCoder:");
         
         self.barButtonsArray = [NSMutableArray array];
+        self.menuBarStyle = EMLMenuBarStyleNone;
     }
     return self;
 }
@@ -152,6 +153,21 @@
     
     if (!(_scrollView.bounds.size.width > [self barLenght])) {
         [_scrollView setContentOffset:CGPointMake(desiredX, 0) animated:animated];
+    }
+}
+
+#pragma mark -
+#pragma mark Customization
+#pragma mark -
+
+- (void)setMenuBarStyle:(EMLMenuBarStyle)menuBarStyle
+{
+    _menuBarStyle = menuBarStyle;
+    
+    if (self.barButtonsArray.count > 0){
+        // If the bar is already setted up
+        [self reloadMenu];
+        self.selectedItemIndex = _selectedItemIndex;
     }
 }
 

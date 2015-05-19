@@ -44,8 +44,29 @@
 {
     // Init
     self.index = position;
-    self.autoWidth = ![(id)menuBar.delegate respondsToSelector:@selector(itemWidthAtIndex:inMenuBar:)];
-    self.buttonWidth = (self.autoWidth ? 70.0f : [menuBar.dataSource itemWidthAtIndex:position inMenuBar:menuBar]);
+    
+    switch (menuBar.menuBarStyle) {
+        case EMLMenuBarStyleNone:{
+            self.autoWidth = ![(id)menuBar.delegate respondsToSelector:@selector(itemWidthAtIndex:inMenuBar:)];
+            self.buttonWidth = (self.autoWidth ? 70.0f : [menuBar.dataSource itemWidthAtIndex:position inMenuBar:menuBar]);
+            break;
+        }
+        case EMLMenuBarStyleFitText:{
+            NSString *title = [menuBar.dataSource itemTitleAtIndex:position inMenuBar:menuBar];
+            CGSize size = [title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0f]}];
+            self.buttonWidth = size.width+30.0f;
+            break;
+        }
+        case EMLMenuBarStyleFillMenu:{
+            CGFloat buttonSizeByMenuSize = ([menuBar.dataSource itemCountInMenuBar:menuBar] > 0) ? menuBar.frame.size.width/[menuBar.dataSource itemCountInMenuBar:menuBar] : 0.0f;
+            self.buttonWidth = buttonSizeByMenuSize;
+            break;
+        }
+        default:{
+            break;
+        }
+    }
+    
     self.buttonHeight = menuBar.frame.size.height;
     
     // Set frame
@@ -56,7 +77,7 @@
     }
     
     [self setFrame:CGRectMake(posX, 0.0f,
-                              self.buttonWidth, self.buttonHeight - kButtonYOffset)];
+                              self.buttonWidth, self.buttonHeight)];
     
     // Set title
     self.titleLabel.text = [menuBar.dataSource itemTitleAtIndex:position
