@@ -171,6 +171,26 @@
                                  }];
 }
 
+- (void)appearanceForNormalStateMenuBarButton:(EMLMenuBarButton *)barButton
+{
+    CGRect frame = barButton.frame;
+    frame.size.height = self.menuBar.frame.size.height - 5.0f;
+    
+    barButton.frame = frame;
+    barButton.backgroundColor = [UIColor blackColor];
+    barButton.titleLabel.textColor = [UIColor whiteColor];
+}
+
+- (void)appearanceForSelectedStateMenuBarButton:(EMLMenuBarButton *)barButton
+{
+    CGRect frame = barButton.frame;
+    frame.size.height = self.menuBar.frame.size.height;
+    
+    barButton.frame = frame;
+    barButton.backgroundColor = [UIColor orangeColor];
+    barButton.titleLabel.textColor = [UIColor blackColor];
+}
+
 #pragma mark -
 #pragma mark UIPageViewControllerDataSource
 #pragma mark -
