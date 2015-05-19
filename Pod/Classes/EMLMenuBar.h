@@ -15,7 +15,7 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 
 @property (nonatomic, assign) NSUInteger selectedItemIndex;
-@property (nonatomic, assign) BOOL bounces; // defaults to NO
+@property (nonatomic, assign) BOOL bounces; // default is to NO
 @property (nonatomic, strong) NSArray *barButtonsArray;
 @property (nonatomic, strong) UIView *topBarView;
 
