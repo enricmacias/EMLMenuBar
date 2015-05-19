@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name             = "EMLMenuBar"
-  s.version          = "1.0"
+  s.version          = "1.0.1"
   s.summary          = "Shows a menu tool to navigate through UIViewControllers."
   s.description      = <<-DESC
                         Shows a menu tool to navigate through UIViewControllers. Using a UIScrollView or UIPageViewController.
                        DESC
   s.homepage         = "https://github.com/enricmacias/EMLMenuBar.git"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.screenshots     = "https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/screenshot1.png", "https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/screenshot2.png", "https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/screenshot3.png"
   s.license          = 'MIT'
   s.author           = { "enric.macias.lopez" => "enric.macias.lopez@gmail.com" }
   s.source           = { :git => "https://github.com/enricmacias/EMLMenuBar.git", :tag => s.version.to_s }
