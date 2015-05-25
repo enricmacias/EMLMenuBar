@@ -9,7 +9,7 @@
 
 Implements a scrollable view with buttons in it. Offers different delegate methods to use it as a menu bar and some design and animation customization.
 
-![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/usage1.png)
+![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/preview.gif)
 
 ## Requirements
 
@@ -21,7 +21,7 @@ Implements a scrollable view with buttons in it. Offers different delegate metho
 Check the example project in the "Example" folder.
 
 1. Create a UIView in Interface Builder with EMLMenuBar as a class.
-![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/preview.gif)
+![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/usage1.png)
 2. Set the delegate and datasource to your UIViewController
 3. Implement the necessary methods for the datasource
 ```objective-c
