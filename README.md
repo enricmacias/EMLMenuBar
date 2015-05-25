@@ -23,18 +23,17 @@ Check the example project in the "Example" folder.
 1. Create a UIView in Interface Builder with EMLMenuBar as a class.
 ![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/usage1.png)
 2. Set the delegate and datasource to your UIViewController
-3. Implement the necessary methods for the datasource
+3. Implement the EMLMenuBarDataSource and its required methods:
 ```objective-c
 - (NSUInteger)itemCountInMenuBar:(EMLMenuBar *)menuBar;
 - (NSString *)itemTitleAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar;
 ```
-4. Implement the necessary methods for the delegate
+4. Implement the EMLMEnuBarDelegate and its required method:
 ```objective-c
 - (void)itemSelectedAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar;
 ```
 
 ## Customization
-
 -
 
 ## Installation
