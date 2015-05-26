@@ -30,7 +30,7 @@ Check the example project in the "Example" folder.
   ```objective-c
   @interface EMLMainViewController : UIViewController <EMLMenuBarDelegate, EMLMenuBarDataSource>
   ```
-3. Assign the delegate and datasource to it.
+3. Assign the delegate and datasource to your UIViewController.
 
   ![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/usage2.png)
 4. Implement the EMLMenuBarDataSource and its required methods:
