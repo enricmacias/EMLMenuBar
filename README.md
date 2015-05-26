@@ -20,21 +20,54 @@ Implements a scrollable view with buttons in it. Offers different delegate metho
 
 Check the example project in the "Example" folder.
 
-1. Create a UIView in Interface Builder with EMLMenuBar as a class.
-![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/usage1.png)
-2. Set the delegate and datasource to your UIViewController
-3. Implement the EMLMenuBarDataSource and its required methods:
-```objective-c
-- (NSUInteger)itemCountInMenuBar:(EMLMenuBar *)menuBar;
-- (NSString *)itemTitleAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar;
-```
-4. Implement the EMLMEnuBarDelegate and its required method:
-```objective-c
-- (void)itemSelectedAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar;
-```
+#### Quick setup
+
+1. Create a UIView in Interface Builder with EMLMenuBar as a class. (The buttons will have the height of this view)
+
+  ![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/usage1.png)
+2. Adopt EMLMenuBarDataSource and EMLMEnuBarDelegate into your UIViewController.
+
+  ```objective-c
+  @interface EMLMainViewController : UIViewController <EMLMenuBarDelegate, EMLMenuBarDataSource>
+  ```
+3. Assign the delegate and datasource to it.
+
+  ![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/usage2.png)
+4. Implement the EMLMenuBarDataSource and its required methods:
+
+  ```objective-c
+  - (NSUInteger)itemCountInMenuBar:(EMLMenuBar *)menuBar;
+  - (NSString *)itemTitleAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar;
+  ```
+5. Implement the EMLMEnuBarDelegate and its required method:
+
+  ```objective-c
+  - (void)itemSelectedAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar;
+  ```
 
 ## Customization
--
+
+- Choose one of the three types of button alineation:
+
+  **EMLMenuBarStyleNone** (Default). The width is the one set in EMLMenuBarDataSource.
+  ![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/customization1.png)
+
+  **EMLMenuBarStyleFitText**
+  ![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/customization2.png)
+
+  **EMLMenuBarStyleFillMenu**
+  ![alt tag](https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/customization3.png)
+
+- Modify the button design through interface builder with EMLMenuBarButton xib file:
+```ruby
+EMLMenuBarButton.xib
+```
+
+- Create your own animation with:
+```objective-c
+- (void)appearanceForNormalStateMenuBarButton:(EMLMenuBarButton *)barButton;
+- (void)appearanceForSelectedStateMenuBarButton:(EMLMenuBarButton *)barButton;
+```
 
 ## Installation
 
