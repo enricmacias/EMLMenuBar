@@ -46,6 +46,12 @@
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
+    CGRect frame = _scrollView.frame;
+    frame.size.width = self.frame.size.width;
+    _scrollView.frame = frame;
+    
     _scrollView.contentSize = CGSizeMake([self barLenght],
                                          self.frame.size.height);
     _scrollView.contentInset = UIEdgeInsetsZero;
@@ -216,10 +222,10 @@
         [self.dataSource appearanceForNormalStateMenuBarButton:barButton];
     }
     else{
-        CGRect frame = barButton.frame;
+        /*CGRect frame = barButton.frame;
         frame.size.height = self.frame.size.height - 4.0f;
         
-        barButton.frame = frame;
+        barButton.frame = frame;*/
     }
 }
 
@@ -229,10 +235,10 @@
         [self.dataSource appearanceForSelectedStateMenuBarButton:barButton];
     }
     else{
-        CGRect frame = barButton.frame;
+        /*CGRect frame = barButton.frame;
         frame.size.height = self.frame.size.height;
         
-        barButton.frame = frame;
+        barButton.frame = frame;*/
     }
 }
 

@@ -81,11 +81,19 @@
     self.titleLabel.text = [menuBar.dataSource itemTitleAtIndex:position
                                                     inMenuBar:menuBar];
     
-    // Set gesture recognizer
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSingleTap:)];
-    singleTap.numberOfTapsRequired = 1;
-    singleTap.numberOfTouchesRequired = 1;
-    [self addGestureRecognizer:singleTap];
+    // Background image
+    if ([menuBar.dataSource respondsToSelector:@selector(itemImageAtIndex:inMenuBar:)]){
+        self.backgroundImage.image = [menuBar.dataSource itemImageAtIndex:position
+                                                                inMenuBar:menuBar];
+        self.backgroundImage.hidden = NO;
+    }
+    
+    // Background selected image
+    if ([menuBar.dataSource respondsToSelector:@selector(itemSelectedImageAtIndex:inMenuBar:)]){
+        self.backgroundSelectedImage.image = [menuBar.dataSource itemSelectedImageAtIndex:position
+                                                                                inMenuBar:menuBar];
+        self.backgroundSelectedImage.hidden = YES;
+    }
 }
 
 #pragma mark -
@@ -119,6 +127,10 @@
         else{
             [self.delegate appearanceForSelectedStateMenuBarButton:self];
         }
+        
+        if (self.backgroundSelectedImage){
+            [self showSelectedImage];
+        }
     }
     else{
         if (animated){
@@ -129,16 +141,42 @@
         else{
             [self.delegate appearanceForNormalStateMenuBarButton:self];
         }
+        
+        if (self.backgroundSelectedImage){
+            [self hideSelectedImage];
+        }
     }
 }
 
+- (void)showSelectedImage
+{
+    self.backgroundImage.hidden = YES;
+    self.backgroundSelectedImage.hidden = NO;
+}
+
+- (void)hideSelectedImage
+{
+    self.backgroundImage.hidden = NO;
+    self.backgroundSelectedImage.hidden = YES;
+}
+
 #pragma mark -
-#pragma mark Actions
+#pragma mark ANIMenuBarButtonDelegate
 #pragma mark -
 
-- (void)didSingleTap:(UITapGestureRecognizer *)recognizer
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self showSelectedImage];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.delegate didPressBarButton:self];
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self hideSelectedImage];
 }
 
 @end

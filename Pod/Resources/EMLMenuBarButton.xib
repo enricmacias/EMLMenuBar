@@ -1,32 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1mQ-ZT-Q55" customClass="EMLMenuBarButton">
-            <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iaL-cJ-udd" userLabel="Background Image View">
+                    <rect key="frame" x="0.0" y="3" width="60" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="pAU-NF-IfO"/>
+                    </constraints>
+                </imageView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kGE-8U-yT7" userLabel="Background Selected Image View">
+                    <rect key="frame" x="0.0" y="3" width="60" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="WiF-9w-Wpf"/>
+                    </constraints>
+                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1e3-a4-Irl">
-                    <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                     <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.91007071167883213" green="0.33702181599295683" blue="0.23026272444714316" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.96160300925925923" green="0.10347222222222222" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="kGE-8U-yT7" firstAttribute="leading" secondItem="1mQ-ZT-Q55" secondAttribute="leading" id="1ca-WU-hlN"/>
+                <constraint firstAttribute="centerX" secondItem="iaL-cJ-udd" secondAttribute="centerX" id="IbJ-cW-GIJ"/>
+                <constraint firstAttribute="trailing" secondItem="iaL-cJ-udd" secondAttribute="trailing" id="NcL-Z0-HaL"/>
                 <constraint firstAttribute="bottom" secondItem="1e3-a4-Irl" secondAttribute="bottom" id="U0o-7a-USS"/>
+                <constraint firstAttribute="centerY" secondItem="kGE-8U-yT7" secondAttribute="centerY" id="Xdo-eU-367"/>
                 <constraint firstItem="1e3-a4-Irl" firstAttribute="top" secondItem="1mQ-ZT-Q55" secondAttribute="top" id="ac5-Sd-VVA"/>
                 <constraint firstItem="1e3-a4-Irl" firstAttribute="leading" secondItem="1mQ-ZT-Q55" secondAttribute="leading" id="h8k-FO-qTx"/>
+                <constraint firstAttribute="centerX" secondItem="kGE-8U-yT7" secondAttribute="centerX" id="h9B-wJ-DWY"/>
                 <constraint firstAttribute="trailing" secondItem="1e3-a4-Irl" secondAttribute="trailing" id="iEH-6W-gQV"/>
+                <constraint firstItem="iaL-cJ-udd" firstAttribute="leading" secondItem="1mQ-ZT-Q55" secondAttribute="leading" id="ksB-bJ-Jgk"/>
+                <constraint firstAttribute="trailing" secondItem="kGE-8U-yT7" secondAttribute="trailing" id="l8D-Ob-Vbf"/>
+                <constraint firstAttribute="centerY" secondItem="iaL-cJ-udd" secondAttribute="centerY" id="yJa-NW-wYW"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="backgroundImage" destination="iaL-cJ-udd" id="835-7U-xCW"/>
+                <outlet property="backgroundSelectedImage" destination="kGE-8U-yT7" id="MQI-1B-eWE"/>
                 <outlet property="titleLabel" destination="1e3-a4-Irl" id="Tyi-Kw-kFh"/>
             </connections>
         </view>

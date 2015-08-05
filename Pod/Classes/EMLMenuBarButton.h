@@ -22,6 +22,8 @@
 @interface EMLMenuBarButton : UIView
 
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundImage;
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundSelectedImage;
 @property (nonatomic, assign, getter=isSelected) BOOL selected;
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, weak) id<EMLMenuBarButtonDelegate> delegate;

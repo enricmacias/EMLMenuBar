@@ -137,7 +137,7 @@
 #pragma mark EMLMenuBarDelegate
 #pragma mark -
 
-- (void)itemSelectedAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar
+- (void)itemSelectedAtIndex:(NSInteger)index inMenuBar:(EMLMenuBar *)menuBar
 {
     NSLog(@"Tag selected");
     self.pageViewController.view.userInteractionEnabled = NO;
@@ -168,12 +168,12 @@
 #pragma mark EMLMenuBarDataSource
 #pragma mark -
 
-- (NSUInteger)itemCountInMenuBar:(EMLMenuBar *)menuBar
+- (NSInteger)itemCountInMenuBar:(EMLMenuBar *)menuBar
 {
     return [[self menuDataSource] count];
 }
 
-- (NSString *)itemTitleAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar
+- (NSString *)itemTitleAtIndex:(NSInteger)index inMenuBar:(EMLMenuBar *)menuBar
 {
     return [[self menuDataSource] objectAtIndex:index];
 }
