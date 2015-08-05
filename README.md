@@ -44,6 +44,17 @@ Check the example project in the "Example" folder.
   ```objective-c
   - (void)itemSelectedAtIndex:(NSUInteger)index inMenuBar:(EMLMenuBar *)menuBar;
   ```
+6. Init the menu bar in you 'viewDidLoad:':
+
+    ```objective-c
+    - (void)viewDidLoad
+    {
+        [super viewDidLoad];
+
+        [self.menuBar setup];
+        self.menuBar.selectedItemIndex = 0;
+    }
+    ```
 
 ## Customization
 
