@@ -1,7 +1,7 @@
 PODS:
-  - EMLMenuBar (1.0.1)
-  - Expecta (1.0.0)
-  - Specta (1.0.0)
+  - EMLMenuBar (1.1)
+  - Expecta (1.0.2)
+  - Specta (1.0.3)
 
 DEPENDENCIES:
   - EMLMenuBar (from `../`)
@@ -13,8 +13,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  EMLMenuBar: 9ff1e147bdb976cd083f27b6c9ac0ad62a50163b
-  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
-  Specta: 96fe05fe5c7348b5223f85e862904f6e832abb14
+  EMLMenuBar: 5d59298a997ca66aa3c8de279635f380d59d9cdb
+  Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
+  Specta: cf3e4188cf35375c3ee2cd03f8db8f1f4ef98234
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.38.2

@@ -1,8 +1,8 @@
 {
   "name": "EMLMenuBar",
-  "version": "1.0.1",
+  "version": "1.1",
   "summary": "Shows a menu tool to navigate through UIViewControllers.",
-  "description": "                        Shows a menu tool to navigate through UIViewControllers. Using a UIScrollView or UIPageViewController.\n",
+  "description": "Shows a menu tool to navigate through UIViewControllers. Using a UIScrollView or UIPageViewController.",
   "homepage": "https://github.com/enricmacias/EMLMenuBar.git",
   "screenshots": [
     "https://raw.github.com/enricmacias/EMLMenuBar/master/Preview/screenshot1.png",
@@ -15,7 +15,7 @@
   },
   "source": {
     "git": "https://github.com/enricmacias/EMLMenuBar.git",
-    "tag": "1.0.1"
+    "tag": "1.1"
   },
   "platforms": {
     "ios": "7.0"
@@ -30,8 +30,5 @@
   "resources": [
     "Pod/Resources/*.{xib}"
   ],
-  "frameworks": [
-    "UIKit",
-    "MapKit"
-  ]
+  "frameworks": "UIKit"
 }
