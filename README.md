@@ -82,7 +82,7 @@ EMLMenuBarButton.xib
 
 ## Installation
 
-#### Cocoapods
+#### CocoaPods
 
 EMLMenuBar is available through [CocoaPods](http://cocoapods.org). 
 
